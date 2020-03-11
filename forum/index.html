@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+
+<!-- Mirrored from www.indexhibit.org/forum/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 10 Mar 2020 21:39:42 GMT -->
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+<title>Forum :: Indexhibit</title>
+
+<META NAME='ROBOTS' CONTENT='INDEX, NOFOLLOW' />
+
+<link rel='stylesheet' type='text/css' charset='utf-8' href='https://www.indexhibit.org/ndxzsite/default/reset.css' />
+<link rel='stylesheet' type='text/css' charset='utf-8' href='https://www.indexhibit.org/ndxzsite/default/base.css' />
+<link rel='stylesheet' type='text/css' charset='utf-8' href='https://www.indexhibit.org/ndxzsite/default/style.css' />
+<link rel='stylesheet' type='text/css' charset='utf-8' href='https://www.indexhibit.org/ndxzsite/default/forum.css' />
+		
+<!--[if lte IE 6]>
+<link rel='stylesheet' href='/forum/css/ie.css' type='text/css' />
+<![endif]-->
+		
+<!--[if IE]>
+<link rel='stylesheet' href='/forum/css/forum-ie.css' type='text/css' />
+<![endif]-->
+
+<script type='text/javascript' src='https://www.indexhibit.org/forum/js/jquery.js'></script>
+<script type='text/javascript' src='https://www.indexhibit.org/forum/js/common.js'></script>
+
+<script src='https://www.indexhibit.org/ndxzsite/default/privacy.js'></script>
+
+<!--[if lte IE 6]>
+<script type='text/javascript'>
+$(document).ready( function() { contented(); } );
+$(window).resize( function() { contented(); } );
+</script>
+<![endif]-->
+		
+<script type='text/javascript'>
+var tog = new Array();
+var yes	= new Array();
+function cancel_edit(id)
+{
+	var o = $('#post_note_' + id);
+	o.html(tog[id]);
+}
+
+function formcheck() 
+{
+	if (($('.version').is(':checked')) && ($('#questionbox').val() != '') && ($('#titlespace').val() != ''))
+	{ return true; } else {
+		alert('All fields are required.');
+		return false;
+	}
+}
+
+function formcheckresponse()
+{
+	if ($('textarea#response').val() != '')
+	{
+		return true;
+	} 
+	else 
+	{
+		alert('All fields are required.');
+		return false;
+	}
+}
+		
+function favoritize(act, id, stick)
+{
+	$.post('https://www.indexhibit.org/forum/', { upd_faves : 'true', v : act, x : id, y : stick }, 
+		function(html) {
+			$('#fave_' + id).html(html);
+	});
+}
+		
+		function update_edit(id)
+		{
+			var o = $('#post_note_' + id);
+			var text = encodeURIComponent( $('textarea#post_editor_' + id).val() );
+			var test = encodeURIComponent( tog[id] );
+			
+			if (text == '') 
+			{ 
+				cancel_edit(id); 
+				yes[id] = false; 
+				return false; exit; 
+			}
+			
+			$.post('https://www.indexhibit.org/forum/', { upd_jxtext : 'true', v : text, x : id }, 
+				function(html) {
+					yes[id] = false;
+					var o = $('#post_note_' + id);
+					o.html(html);
+			});
+		}
+		
+		function notifications()
+		{
+			return false;
+
+			//alert('Pau and Pindaros got the cooties!');
+
+			// let's get the real contents
+			$.post('https://www.indexhibit.org/forum/notify/0/', { upd_notify : 'true' }, 
+				function(html) {
+					alert(html);
+			});
+		}
+		
+		function editPost(id)
+		{
+			if (yes[id] == true) { cancel_edit( id ); yes[id] = false; return false; exit; }
+			
+			// get the content of the post
+			var o = $('#post_note_' + id);
+			var contents = o.html();
+			
+			tog[id] = contents;
+			yes[id] = true;
+			
+			// let's get the real contents
+			$.post('https://www.indexhibit.org/forum/', { upd_edtext : 'true', x : id }, 
+				function(html) {
+					$('#post_note_' + id).html(html);
+			});
+		}
+
+
+</script>
+</head>
+<body>
+<div id='index'>
+<div class='container'>
+
+<p><strong><a href='https://www.indexhibit.org/'>Indexhibit</a></strong><br />
+<span id='index_id'  onmouseover="color_index('over'); return false;" onmouseout="color_index('out'); return false;">Index</span> + <span id='exhibit_id'  onmouseover="color_exhibit('over'); return false;" onmouseout="color_exhibit('out'); return false;">Exhibit</span></p>
+
+<nav>
+<ul class='section active_section' id='section_2'>
+<ul>
+</ul>
+</li>
+</ul>
+<ul class='section' id='section_1'>
+<li id='exhibit_146' class='exhibit_title'><a href='https://www.indexhibit.org/what-who-why-how/'>What Who Why How</a></li>
+<li id='exhibit_68' class='exhibit_title'><a href='https://www.indexhibit.org/cms/features/'>Features</a></li>
+<li id='exhibit_150' class='exhibit_title exhibit_link'><a href='https://www.indexhibit.org/manage/'>Login</a></li>
+</ul>
+<ul class='section' id='section_12'>
+<li id='exhibit_154' class='exhibit_title'><a href='https://www.indexhibit.org/demo/'>Demo</a></li>
+<li id='exhibit_152' class='exhibit_title exhibit_link'><a href='https://www.indexhibit.org/tutorials/'>Tutorials</a></li>
+<li id='exhibit_127' class='exhibit_title exhibit_link'><a href='https://www.indexhibit.org/forum/'>Forum</a></li>
+<li id='exhibit_47' class='exhibit_title'><a href='https://www.indexhibit.org/help/'>Assistance</a></li>
+</ul>
+<ul class='section' id='section_14'>
+<li id='exhibit_97' class='exhibit_title'><a href='https://www.indexhibit.org/webhosting/'>Webhosting</a></li>
+<li id='exhibit_151' class='exhibit_title exhibit_link'><a href='https://www.indexhibit.org/plugin/'>Plugins</a></li>
+</ul>
+<ul class='section' id='section_4'>
+<li><span id='section_title_4' class='section_title'><a href='https://www.indexhibit.org/news/' id='section_link_4'>News</a></span>
+<ul>
+<li id='exhibit_63' class='exhibit_title'><a href='https://www.indexhibit.org/contact/'>Contact</a></li>
+<li id='exhibit_181' class='exhibit_title active'><a href='https://www.indexhibit.org/privacy-policy/'>Privacy Policy</a></li>
+</ul>
+</li>
+</ul>
+<ul class='section' id='section_15'>
+</ul>
+<ul class='section' id='section_13'>
+</ul>
+<ul class='section' id='section_8'>
+</ul>
+
+</nav>
+
+<div id='login' style='margin-bottom: 18px;'>
+<form name='mform' method='post' action='#'>
+<p>Login:</p>
+<div class='form-label'><label>Email Address</label></div>
+<div class='form-input'><input type='text' name='lemail' style='padding: 2px; width: 160px; display: block;' /></div>
+<div class='form-label'><label>Password</label></div>
+<div class='form-input'><input type='password' name='lpwd' style='padding: 2px; width: 160px; display: block;' /></div>
+<div class='form-submit'><input type='submit' name='sbmt_login' value='Login' /></div>
+</form>
+</div>
+
+<p>Created by<br />
+<a href='http://eatock.com/'>Daniel Eatock</a><br />
+<a href='http://vaska.com/'>Jeffery Vaska</a><br />
+And You</p>
+
+<div class='createdby'>
+
+<p><a href='http://www.indexhibit.org/'>Built with Indexhibit</a></p>
+
+</div>
+
+</div>
+</div>
+
+<div id='exhibit'>
+<div class='container'>
+<div id='forum'>
+<div style='text-align: right;'>Indexhibit was updated to version 2.1.6 on December 10th, 2019.</div>
+
+<p><strong>Forum</strong></p>
+<div id='forum-guidelines' style='width: 700px;'>
+<div style='width: 350px; float: left;'><div style='padding-right: 25px;'>
+<p>Welcome to the Indexhibit support center. We hope your find our resources useful.</p><p>You can register for the forum <a href='https://www.indexhibit.org/register/'>here</a>.</p>
+<p>&raquo; <a href='https://www.indexhibit.org:443/forum/category/5/'>Installation</a><br /><span class='forum_desc'>Installation issues involving the CMS or plugins.</span></p>
+<p>&raquo; <a href='https://www.indexhibit.org:443/forum/category/11/'>Upgrade</a><br /><span class='forum_desc'>Upgrade related questions and issues.</span></p>
+<p>&raquo; <a href='https://www.indexhibit.org:443/forum/category/8/'>Troubleshooting</a><br /><span class='forum_desc'>Bugs, problems, issues pertaining to Indexhibit (not customizations).</span></p>
+<p>&raquo; <a href='https://www.indexhibit.org:443/forum/category/1/'>Customize</a><br /><span class='forum_desc'>Customization questions regarding themes, formats and/or plugins.</span></p>
+</div></div>
+<div style='width: 350px; float: left;'><div style='padding-right: 25px;'>
+<p><strong>Forum Guidelines</strong></p>
+<p>Support is provided by community members just like you. Feel free to help others.</p>
+<p>We expect people to be patient, courteous and civil at all times in the forum. Please be thoughtful before you post.</p>
+<p>Please make your questions as clear and concise as you possibly can. Stay on topic and do not derail other user questions.</p>
+<p>Please try searching the forum before posting your question.</p>
+<p>Do not ever post your email address, password or other personal information (besides simply your URL) to the forum.</p>
+<p>Advertising, spam and promotions (except from Indexhibit) are strictly forbidden and may lead to immediate banning from the forum. This forum is not to be used for commercial purposes. Meaning, most especially, we do not offer recommendations or discuss webhosting in this forum. We recommend webhosting <a href='https://www.indexhibit.org/webhosting/'>here</a> for your convenience.</p>
+<p>Thank you.</p></div></div>
+<div style='clear: left;'><!-- --></div>
+</div>
+
+
+</div>
+</div>
+</div>
+		
+
+		
+</body>
+
+<!-- Mirrored from www.indexhibit.org/forum/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 10 Mar 2020 21:39:42 GMT -->
+</html>
