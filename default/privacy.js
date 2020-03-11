@@ -53,9 +53,9 @@ ready(function()
         elem.setAttribute('class', 'privacier');
         var e2 = document.createElement('div');
         e2.setAttribute('class', 'privacier');
-        e2.innerHTML = "<div style='padding:50px;margin:0;line-height:1.3em;display:flex;justify-content:center;align-items:center;text-align:center;'><div><br />We use cookies on this site to provide you with downloading files and forum access. If this is good with you, please 'accept' or review our <a href='/privacy-policy/' style='color:white;text-decoration:underline;'>Privacy Policy</a>.<br /><br /><a href='#' onclick=\"accepted();return false;\" style='color:white;text-decoration:underline;'>Accept</a></div></div>";
-        elem.style.cssText = 'position:fixed;top:' + new_y + 'px;left:' + new_x + 'px;width:327px;height:327px;z-index:100;background:blue;border-radius:50%;transform:rotate(-20deg);color:white;font-size:18px;filter:blur(20px)';
-        e2.style.cssText = 'position:fixed;top:' + new_y + 'px;left:' + new_x + 'px;width:300px;height:300px;z-index:101;transform:rotate(-20deg);color:white;font-size:18px';
+        e2.innerHTML = "";
+        elem.style.cssText = '';
+        e2.style.cssText = '';
         document.body.appendChild(elem);
         document.body.appendChild(e2);
     }

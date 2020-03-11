@@ -8,8 +8,9 @@
 */
 
 body {
-	font-size: 13px!important;
-	font-family: 'Helvetica Neue', Arial, Helvetica, Verdana, sans-serif;
+	font-size: 14px!important;
+	font-family: 'Muli', sans-serif;
+	/*font-family: 'Helvetica Neue', Arial, Helvetica, Verdana, sans-serif;*/
 	background: #fff;
 	color: #000;
 	line-height: 1.4em;
@@ -17,10 +18,15 @@ body {
 	/* font-weight: 300; */
 }
 
+hr {
+    max-width: 600px;
+    margin: 0px;
+}
+
 /* link scheme */
 /* you can customize links further down the page too */
-a:link { text-decoration: none; color: #000; }
-a:visited { text-decoration: none; color: #888888; }
+a:link { text-decoration: none; color: #551A8B; }
+/*a:visited { text-decoration: none; color: #888888; }*/
 a:hover { text-decoration: underline; }
 a:active { text-decoration: none; color: #00cc00; }
 a img { border: none; }
@@ -34,7 +40,7 @@ blockquote { padding-left: 9px; }
 /* headings */
 h1 { font-size: 16px; margin-bottom: 1em; font-weight: bold; }
 h2 { font-size: 16px; margin-bottom: 1em; font-weight: bold; }
-h3 { font-size: 16px; margin-bottom: 1em; }
+h3 { font-size: 16px; margin-bottom: 1em; font-weight: bold; }
 h4 { font-size: 16px; margin-bottom: 1em; }
 
 /* paragraph width */
@@ -86,7 +92,7 @@ li.active a:visited, li a.active, li span.active, #index ul.section li.active a:
 /* end styling for index */
 
 /* links styles only for the #index region */
-#index a:link {  } 
+#index a:link { text-decoration: none; color: #551A8B!important; }
 #index a:visited {  }
 #index a:hover {  } 
 #index a:active {  } 
