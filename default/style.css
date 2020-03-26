@@ -11,7 +11,7 @@ body {
 	font-size: 14px!important;
 	font-family: 'Muli', sans-serif;
 	/*font-family: 'Helvetica Neue', Arial, Helvetica, Verdana, sans-serif;*/
-	background: #e0e0e0;
+	background: #fff!important;
 	color: #000;
 	line-height: 1.4em;
 	text-align: justify;
@@ -36,15 +36,15 @@ hr {
 }
 
 sub {
-	background-color: #e0e0e0BF;
+	background-color: #fff;
 }
 
 /* link scheme */
 /* you can customize links further down the page too */
-a:link { text-decoration: none; color: #551A8B; }
+a:link { text-decoration: none; color: #000!important; }
 /*a:visited { text-decoration: none; color: #888888; }*/
 a:hover { text-decoration: underline; }
-a:active { text-decoration: none; color: #00cc00; }
+a:active { text-decoration: none; color: #fff; }
 a img { border: none; }
 audio:focus { outline: none; }
 
@@ -61,14 +61,15 @@ h4 { font-size: 16px; margin-bottom: 1em; }
 
 /* paragraph width */
 #index p { margin-bottom: 1em; }
-#exhibit p, code, blockquote { width: 600px; margin-bottom: 1em; /* line-height: 1.3em; */ }
+#exhibit p, code, blockquote { 	background-color: #FFFFFFDB;
+ width: 600px; margin-bottom: 1em; /* line-height: 1.3em; */ }
 
 /* highlighter style - maybe you want to change colors? */
 .highlight { background: #ccff00; color: #000; }
 
 /* never adjust the margin or padding here unless you seriously know what you are doing */
 /* think #index .container and #exhibit .container for only padding adjustments */
-#index { width: 215px; background: #93E1D8; /* line-height: 1.3em; */ }
+#index { width: 215px; background: #EB5F49; /* line-height: 1.3em; */ }
 #exhibit { margin: 0 0 0 215px; }
 
 /* styling the index */
@@ -108,9 +109,9 @@ li.active a:visited, li a.active, li span.active, #index ul.section li.active a:
 /* end styling for index */
 
 /* links styles only for the #index region */
-#index a:link { text-decoration: none; color: #551A8B!important; }
-#index a:visited {  }
-#index a:hover {  } 
+#index a:link { text-decoration: none; color: #000!important; }
+#index a:visited { color: #000!important;  }
+#index a:hover { color: #fff!important; } 
 #index a:active {  } 
 
 /* links styles only for the #exhibit region */

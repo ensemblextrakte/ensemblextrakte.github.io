@@ -13,7 +13,20 @@ var contando = 1;
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
+    x3 = windowWidth/1.5;
+    y3 = windowHeight/2;
     // verde
+    x2 = windowWidth/1.5;
+    y2 = windowHeight/2;
+    // amarillo
+    x1 = windowWidth/1.5;
+    y1 = windowHeight/2;
+    // azul
+    x = windowWidth/1.5;
+    y = windowHeight/2;
+
+    /*
+	// verde
     x2 = 580;
     y2 = 320;
     // amarillo
@@ -22,6 +35,7 @@ function setup() {
     // azul
     x = 580;
     y = 320;
+    */
 
     //background(51);
 }
@@ -33,8 +47,9 @@ function draw() {
     caminanteUno();
     caminanteDos();
     caminanteTres();
+    caminanteCuatro();
 
-    if (contando >= 9000) {
+    if (contando >= 10000) {
         window.location.reload();
     }
 
@@ -57,7 +72,7 @@ function caminanteUno() {
 
 
     noStroke();
-    fill(contador, 80, 50);
+    fill(contador, contador, contador);
     //strokeWeight(2);
     ellipse(x, y, 4, 4);
 
@@ -96,7 +111,8 @@ function caminanteDos() {
 
 
     noStroke();
-    fill(255, 170, contador);
+    fill(255, 120, contador);
+    //fill(contador, contador, contador);
     //strokeWeight(2);
     ellipse(x1, y1, 4, 4);
 
@@ -122,7 +138,7 @@ function caminanteTres() {
 
     contador = contador + dato;
 
-    if (contador <= 10) {
+    if (contador <= 0) {
         dato = 1;
         contador += 1;
     }
@@ -135,7 +151,7 @@ function caminanteTres() {
 
 
     noStroke();
-    fill(contador, 180, contador);
+    fill(contador, contador, contador);
     //strokeWeight(2);
     ellipse(x2, y2, 4, 4);
 
@@ -153,6 +169,45 @@ function caminanteTres() {
             break;
         case 3:
             y2 = y2 - 6;
+            break;
+    }
+}
+
+function caminanteCuatro() {
+
+    contador = contador + dato;
+
+    if (contador <= 0) {
+        dato = 1;
+        contador += 1;
+    }
+
+
+    if (contador >= 255) {
+        dato = -1;
+        contador -= 1;
+    }
+
+
+    noStroke();
+    fill(contador, contador, contador);
+    //strokeWeight(2);
+    ellipse(x3, y3, 4, 4);
+
+    const r = floor(random(4));
+
+    switch (r) {
+        case 0:
+            x3 = x3 + 6;
+            break;
+        case 1:
+            x3 = x3 - 6;
+            break;
+        case 2:
+            y3 = y3 + 6;
+            break;
+        case 3:
+            y3 = y3 - 6;
             break;
     }
 }
